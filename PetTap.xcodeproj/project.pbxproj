@@ -1,0 +1,533 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF2577E428A766CA006EFD8D /* PetTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2577E328A766CA006EFD8D /* PetTapTests.swift */; };
+		EF3FE4A228A6E11300F1DCDA /* PetTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FE4A128A6E11300F1DCDA /* PetTapApp.swift */; };
+		EF3FE4A428A6E11300F1DCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FE4A328A6E11300F1DCDA /* ContentView.swift */; };
+		EF3FE4A628A6E11400F1DCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3FE4A528A6E11400F1DCDA /* Assets.xcassets */; };
+		EF3FE4A928A6E11400F1DCDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3FE4A828A6E11400F1DCDA /* Preview Assets.xcassets */; };
+		EFBE6C7B28A7760D002624EA /* Meow2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C7728A7760C002624EA /* Meow2.mp3 */; };
+		EFBE6C7C28A7760D002624EA /* Meow3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C7828A7760C002624EA /* Meow3.mp3 */; };
+		EFBE6C7D28A7760D002624EA /* Meow4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C7928A7760D002624EA /* Meow4.mp3 */; };
+		EFBE6C7E28A7760D002624EA /* Meow1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C7A28A7760D002624EA /* Meow1.mp3 */; };
+		EFBE6C8328A80013002624EA /* Woof4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C7F28A80013002624EA /* Woof4.mp3 */; };
+		EFBE6C8428A80013002624EA /* Woof1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8028A80013002624EA /* Woof1.mp3 */; };
+		EFBE6C8528A80013002624EA /* Woof2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8128A80013002624EA /* Woof2.mp3 */; };
+		EFBE6C8628A80013002624EA /* Woof3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8228A80013002624EA /* Woof3.mp3 */; };
+		EFBE6C8B28A86E23002624EA /* Chirp4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8728A86E23002624EA /* Chirp4.mp3 */; };
+		EFBE6C8C28A86E23002624EA /* Chirp2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8828A86E23002624EA /* Chirp2.mp3 */; };
+		EFBE6C8D28A86E23002624EA /* Chirp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8928A86E23002624EA /* Chirp3.mp3 */; };
+		EFBE6C8E28A86E23002624EA /* Chirp1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFBE6C8A28A86E23002624EA /* Chirp1.mp3 */; };
+		EFBE6C9028A87E32002624EA /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE6C8F28A87E32002624EA /* Sound.swift */; };
+		EFBE6C9228A87EBE002624EA /* PetObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE6C9128A87EBE002624EA /* PetObj.swift */; };
+		EFBE6C9628A952C0002624EA /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE6C9528A952C0002624EA /* Header.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF2577E528A766CA006EFD8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF3FE49628A6E11300F1DCDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF3FE49D28A6E11300F1DCDA;
+			remoteInfo = PetTap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF2577E128A766CA006EFD8D /* PetTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2577E328A766CA006EFD8D /* PetTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTapTests.swift; sourceTree = "<group>"; };
+		EF3FE49E28A6E11300F1DCDA /* Pet Tap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pet Tap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF3FE4A128A6E11300F1DCDA /* PetTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTapApp.swift; sourceTree = "<group>"; };
+		EF3FE4A328A6E11300F1DCDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF3FE4A528A6E11400F1DCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF3FE4A828A6E11400F1DCDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFBE6C7728A7760C002624EA /* Meow2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Meow2.mp3; sourceTree = "<group>"; };
+		EFBE6C7828A7760C002624EA /* Meow3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Meow3.mp3; sourceTree = "<group>"; };
+		EFBE6C7928A7760D002624EA /* Meow4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Meow4.mp3; sourceTree = "<group>"; };
+		EFBE6C7A28A7760D002624EA /* Meow1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Meow1.mp3; sourceTree = "<group>"; };
+		EFBE6C7F28A80013002624EA /* Woof4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woof4.mp3; sourceTree = "<group>"; };
+		EFBE6C8028A80013002624EA /* Woof1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woof1.mp3; sourceTree = "<group>"; };
+		EFBE6C8128A80013002624EA /* Woof2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woof2.mp3; sourceTree = "<group>"; };
+		EFBE6C8228A80013002624EA /* Woof3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Woof3.mp3; sourceTree = "<group>"; };
+		EFBE6C8728A86E23002624EA /* Chirp4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chirp4.mp3; sourceTree = "<group>"; };
+		EFBE6C8828A86E23002624EA /* Chirp2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chirp2.mp3; sourceTree = "<group>"; };
+		EFBE6C8928A86E23002624EA /* Chirp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chirp3.mp3; sourceTree = "<group>"; };
+		EFBE6C8A28A86E23002624EA /* Chirp1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chirp1.mp3; sourceTree = "<group>"; };
+		EFBE6C8F28A87E32002624EA /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		EFBE6C9128A87EBE002624EA /* PetObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetObj.swift; sourceTree = "<group>"; };
+		EFBE6C9528A952C0002624EA /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF2577DE28A766CA006EFD8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3FE49B28A6E11300F1DCDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF2577E228A766CA006EFD8D /* PetTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF2577E328A766CA006EFD8D /* PetTapTests.swift */,
+			);
+			path = PetTapTests;
+			sourceTree = "<group>";
+		};
+		EF3FE49528A6E11300F1DCDA = {
+			isa = PBXGroup;
+			children = (
+				EF3FE4A028A6E11300F1DCDA /* PetTap */,
+				EF2577E228A766CA006EFD8D /* PetTapTests */,
+				EF3FE49F28A6E11300F1DCDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF3FE49F28A6E11300F1DCDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF3FE49E28A6E11300F1DCDA /* Pet Tap.app */,
+				EF2577E128A766CA006EFD8D /* PetTapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF3FE4A028A6E11300F1DCDA /* PetTap */ = {
+			isa = PBXGroup;
+			children = (
+				EF3FE4A128A6E11300F1DCDA /* PetTapApp.swift */,
+				EF3FE4A328A6E11300F1DCDA /* ContentView.swift */,
+				EFBE6C9528A952C0002624EA /* Header.swift */,
+				EFBE6C9128A87EBE002624EA /* PetObj.swift */,
+				EFBE6C8F28A87E32002624EA /* Sound.swift */,
+				EF3FE4A528A6E11400F1DCDA /* Assets.xcassets */,
+				EFBE6C6628A76FA7002624EA /* Sounds */,
+				EF3FE4A728A6E11400F1DCDA /* Preview Content */,
+			);
+			path = PetTap;
+			sourceTree = "<group>";
+		};
+		EF3FE4A728A6E11400F1DCDA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF3FE4A828A6E11400F1DCDA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFBE6C6628A76FA7002624EA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EFBE6C8A28A86E23002624EA /* Chirp1.mp3 */,
+				EFBE6C8828A86E23002624EA /* Chirp2.mp3 */,
+				EFBE6C8928A86E23002624EA /* Chirp3.mp3 */,
+				EFBE6C8728A86E23002624EA /* Chirp4.mp3 */,
+				EFBE6C8028A80013002624EA /* Woof1.mp3 */,
+				EFBE6C8128A80013002624EA /* Woof2.mp3 */,
+				EFBE6C8228A80013002624EA /* Woof3.mp3 */,
+				EFBE6C7F28A80013002624EA /* Woof4.mp3 */,
+				EFBE6C7A28A7760D002624EA /* Meow1.mp3 */,
+				EFBE6C7728A7760C002624EA /* Meow2.mp3 */,
+				EFBE6C7828A7760C002624EA /* Meow3.mp3 */,
+				EFBE6C7928A7760D002624EA /* Meow4.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF2577E028A766CA006EFD8D /* PetTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF2577E928A766CA006EFD8D /* Build configuration list for PBXNativeTarget "PetTapTests" */;
+			buildPhases = (
+				EF2577DD28A766CA006EFD8D /* Sources */,
+				EF2577DE28A766CA006EFD8D /* Frameworks */,
+				EF2577DF28A766CA006EFD8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF2577E628A766CA006EFD8D /* PBXTargetDependency */,
+			);
+			name = PetTapTests;
+			productName = PetTapTests;
+			productReference = EF2577E128A766CA006EFD8D /* PetTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF3FE49D28A6E11300F1DCDA /* PetTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF3FE4AC28A6E11400F1DCDA /* Build configuration list for PBXNativeTarget "PetTap" */;
+			buildPhases = (
+				EF3FE49A28A6E11300F1DCDA /* Sources */,
+				EF3FE49B28A6E11300F1DCDA /* Frameworks */,
+				EF3FE49C28A6E11300F1DCDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetTap;
+			productName = PetTap;
+			productReference = EF3FE49E28A6E11300F1DCDA /* Pet Tap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF3FE49628A6E11300F1DCDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					EF2577E028A766CA006EFD8D = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = EF3FE49D28A6E11300F1DCDA;
+					};
+					EF3FE49D28A6E11300F1DCDA = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = EF3FE49928A6E11300F1DCDA /* Build configuration list for PBXProject "PetTap" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF3FE49528A6E11300F1DCDA;
+			productRefGroup = EF3FE49F28A6E11300F1DCDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF3FE49D28A6E11300F1DCDA /* PetTap */,
+				EF2577E028A766CA006EFD8D /* PetTapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF2577DF28A766CA006EFD8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3FE49C28A6E11300F1DCDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF3FE4A928A6E11400F1DCDA /* Preview Assets.xcassets in Resources */,
+				EFBE6C8628A80013002624EA /* Woof3.mp3 in Resources */,
+				EFBE6C7B28A7760D002624EA /* Meow2.mp3 in Resources */,
+				EFBE6C8528A80013002624EA /* Woof2.mp3 in Resources */,
+				EFBE6C8C28A86E23002624EA /* Chirp2.mp3 in Resources */,
+				EFBE6C7D28A7760D002624EA /* Meow4.mp3 in Resources */,
+				EFBE6C8428A80013002624EA /* Woof1.mp3 in Resources */,
+				EFBE6C8E28A86E23002624EA /* Chirp1.mp3 in Resources */,
+				EFBE6C8B28A86E23002624EA /* Chirp4.mp3 in Resources */,
+				EFBE6C7C28A7760D002624EA /* Meow3.mp3 in Resources */,
+				EFBE6C7E28A7760D002624EA /* Meow1.mp3 in Resources */,
+				EFBE6C8D28A86E23002624EA /* Chirp3.mp3 in Resources */,
+				EFBE6C8328A80013002624EA /* Woof4.mp3 in Resources */,
+				EF3FE4A628A6E11400F1DCDA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF2577DD28A766CA006EFD8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF2577E428A766CA006EFD8D /* PetTapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF3FE49A28A6E11300F1DCDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFBE6C9628A952C0002624EA /* Header.swift in Sources */,
+				EF3FE4A428A6E11300F1DCDA /* ContentView.swift in Sources */,
+				EFBE6C9028A87E32002624EA /* Sound.swift in Sources */,
+				EF3FE4A228A6E11300F1DCDA /* PetTapApp.swift in Sources */,
+				EFBE6C9228A87EBE002624EA /* PetObj.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF2577E628A766CA006EFD8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF3FE49D28A6E11300F1DCDA /* PetTap */;
+			targetProxy = EF2577E528A766CA006EFD8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF2577E728A766CA006EFD8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightCraft.PetTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetTap.app/PetTap";
+			};
+			name = Debug;
+		};
+		EF2577E828A766CA006EFD8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightCraft.PetTapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetTap.app/PetTap";
+			};
+			name = Release;
+		};
+		EF3FE4AA28A6E11400F1DCDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF3FE4AB28A6E11400F1DCDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3FE4AD28A6E11400F1DCDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PetTap/Preview Content\"";
+				DEVELOPMENT_TEAM = HW88797J4N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightCraft.PetTap;
+				PRODUCT_NAME = "Pet Tap";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF3FE4AE28A6E11400F1DCDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PetTap/Preview Content\"";
+				DEVELOPMENT_TEAM = HW88797J4N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = LightCraft.PetTap;
+				PRODUCT_NAME = "Pet Tap";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF2577E928A766CA006EFD8D /* Build configuration list for PBXNativeTarget "PetTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF2577E728A766CA006EFD8D /* Debug */,
+				EF2577E828A766CA006EFD8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3FE49928A6E11300F1DCDA /* Build configuration list for PBXProject "PetTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3FE4AA28A6E11400F1DCDA /* Debug */,
+				EF3FE4AB28A6E11400F1DCDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF3FE4AC28A6E11400F1DCDA /* Build configuration list for PBXNativeTarget "PetTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3FE4AD28A6E11400F1DCDA /* Debug */,
+				EF3FE4AE28A6E11400F1DCDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF3FE49628A6E11300F1DCDA /* Project object */;
+}
