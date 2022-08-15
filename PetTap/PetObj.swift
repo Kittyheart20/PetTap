@@ -26,6 +26,10 @@ class Pets {
         } else if (animal == "bird") {
             self.price = 100
             sounds = ["Chirp1", "Chirp2", "Chirp3", "Chirp4"]
+            
+        } else if (animal == "bunny") {
+            self.price = 100
+            sounds = ["Boing1", "Boing2", "Boing3", "Boing4"]
         } else {
             self.price = 0
             sounds = []

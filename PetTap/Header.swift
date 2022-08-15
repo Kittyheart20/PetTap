@@ -9,22 +9,27 @@ import SwiftUI
 
 struct Header: View {
     var body: some View {
+        
         ZStack{
-            Color.pink
+            Color.theme.accent2
+            
+            Image ("pinkpawback")
+                .resizable()
+                .frame(width: 500, height: 400)
+                .scaledToFit()
+            
             VStack{
                 Spacer()
                 Image ("Pet Tap")
-                    .scaledToFit()
-                    .frame(height: 70)
-                    .padding()
             }
         }
+        .frame(height: 200)
     }
 }
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         Header()
-            .previewLayout(.fixed(width: 375, height: 80))
+            .previewLayout(.fixed(width: 500, height: 200))
     }
 }
