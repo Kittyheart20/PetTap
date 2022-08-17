@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EF2577E428A766CA006EFD8D /* PetTapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2577E328A766CA006EFD8D /* PetTapTests.swift */; };
+		EF384FCF28AC0810005F8D6D /* BackgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF384FCE28AC0810005F8D6D /* BackgroundMusic.mp3 */; };
+		EF384FD428AC74FC005F8D6D /* Bubbles2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF384FD028AC74FC005F8D6D /* Bubbles2.mp3 */; };
+		EF384FD528AC74FC005F8D6D /* Bubbles4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF384FD128AC74FC005F8D6D /* Bubbles4.mp3 */; };
+		EF384FD628AC74FC005F8D6D /* Bubbles3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF384FD228AC74FC005F8D6D /* Bubbles3.mp3 */; };
+		EF384FD728AC74FC005F8D6D /* Bubbles1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF384FD328AC74FC005F8D6D /* Bubbles1.mp3 */; };
 		EF3FE4A228A6E11300F1DCDA /* PetTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FE4A128A6E11300F1DCDA /* PetTapApp.swift */; };
 		EF3FE4A428A6E11300F1DCDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3FE4A328A6E11300F1DCDA /* ContentView.swift */; };
 		EF3FE4A628A6E11400F1DCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF3FE4A528A6E11400F1DCDA /* Assets.xcassets */; };
@@ -48,6 +53,11 @@
 /* Begin PBXFileReference section */
 		EF2577E128A766CA006EFD8D /* PetTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2577E328A766CA006EFD8D /* PetTapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTapTests.swift; sourceTree = "<group>"; };
+		EF384FCE28AC0810005F8D6D /* BackgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackgroundMusic.mp3; sourceTree = "<group>"; };
+		EF384FD028AC74FC005F8D6D /* Bubbles2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubbles2.mp3; sourceTree = "<group>"; };
+		EF384FD128AC74FC005F8D6D /* Bubbles4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubbles4.mp3; sourceTree = "<group>"; };
+		EF384FD228AC74FC005F8D6D /* Bubbles3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubbles3.mp3; sourceTree = "<group>"; };
+		EF384FD328AC74FC005F8D6D /* Bubbles1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bubbles1.mp3; sourceTree = "<group>"; };
 		EF3FE49E28A6E11300F1DCDA /* PetTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3FE4A128A6E11300F1DCDA /* PetTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTapApp.swift; sourceTree = "<group>"; };
 		EF3FE4A328A6E11300F1DCDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +158,11 @@
 		EFBE6C6628A76FA7002624EA /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				EF384FD328AC74FC005F8D6D /* Bubbles1.mp3 */,
+				EF384FD028AC74FC005F8D6D /* Bubbles2.mp3 */,
+				EF384FD228AC74FC005F8D6D /* Bubbles3.mp3 */,
+				EF384FD128AC74FC005F8D6D /* Bubbles4.mp3 */,
+				EF384FCE28AC0810005F8D6D /* BackgroundMusic.mp3 */,
 				EF6EB37228A9AD7A0090B60E /* Boing1.mp3 */,
 				EF6EB37328A9AD7A0090B60E /* Boing2.mp3 */,
 				EF6EB37728A9AF9B0090B60E /* Boing3.mp3 */,
@@ -257,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF3FE4A928A6E11400F1DCDA /* Preview Assets.xcassets in Resources */,
+				EF384FCF28AC0810005F8D6D /* BackgroundMusic.mp3 in Resources */,
 				EFBE6C8628A80013002624EA /* Woof3.mp3 in Resources */,
+				EF384FD728AC74FC005F8D6D /* Bubbles1.mp3 in Resources */,
 				EFBE6C7B28A7760D002624EA /* Meow2.mp3 in Resources */,
 				EF6EB37428A9AD7A0090B60E /* Boing1.mp3 in Resources */,
 				EFBE6C8528A80013002624EA /* Woof2.mp3 in Resources */,
@@ -266,10 +283,13 @@
 				EFBE6C8428A80013002624EA /* Woof1.mp3 in Resources */,
 				EFBE6C8E28A86E23002624EA /* Chirp1.mp3 in Resources */,
 				EF6EB37528A9AD7A0090B60E /* Boing2.mp3 in Resources */,
+				EF384FD528AC74FC005F8D6D /* Bubbles4.mp3 in Resources */,
 				EFBE6C8B28A86E23002624EA /* Chirp4.mp3 in Resources */,
 				EFBE6C7C28A7760D002624EA /* Meow3.mp3 in Resources */,
+				EF384FD628AC74FC005F8D6D /* Bubbles3.mp3 in Resources */,
 				EFBE6C7E28A7760D002624EA /* Meow1.mp3 in Resources */,
 				EFBE6C8D28A86E23002624EA /* Chirp3.mp3 in Resources */,
+				EF384FD428AC74FC005F8D6D /* Bubbles2.mp3 in Resources */,
 				EF6EB37828A9AF9B0090B60E /* Boing4.mp3 in Resources */,
 				EFBE6C8328A80013002624EA /* Woof4.mp3 in Resources */,
 				EF6EB37928A9AF9B0090B60E /* Boing3.mp3 in Resources */,

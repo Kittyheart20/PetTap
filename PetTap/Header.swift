@@ -15,12 +15,16 @@ struct Header: View {
             
             Image ("pinkpawback")
                 .resizable()
-                .frame(width: 500, height: 400)
+                .frame(width: 600, height: 400)
                 .scaledToFit()
+                .opacity(0.7)
             
             VStack{
                 Spacer()
                 Image ("Pet Tap")
+                Rectangle()
+                    .fill(Color.theme.butt2)
+                    .frame(width: 600, height: 5)
             }
         }
         .frame(height: 200)
@@ -30,6 +34,6 @@ struct Header: View {
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         Header()
-            .previewLayout(.fixed(width: 500, height: 200))
+            .previewLayout(.fixed(width: 500, height: 500))
     }
 }

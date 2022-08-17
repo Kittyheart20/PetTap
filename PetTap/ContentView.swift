@@ -9,7 +9,9 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    @State private var coins = 1000
+    
+    @State private var coins: Int
+    @State private var mute = false
     
     @State private var shopView = false
     @State private var sPetView = true
@@ -19,11 +21,8 @@ struct ContentView: View {
     @State private var notifView = false
     @State private var notifTxt = ""
     
-    @State private var cat =  Pets(animal: "cat")
-    @State private var dog =  Pets(animal: "dog")
-    @State private var bird =  Pets(animal: "bird")
-    @State private var bunny =  Pets(animal: "bunny")
-    @State private var curanimal = Pets(animal: "cat")
+    @State private var curanimal = Pets(animal: "")
+    @State private var pets: [Pets]
     
     @State private var dayBack =  Back(back: "Day")
     @State private var nightBack =  Back(back: "Night")
@@ -50,6 +49,31 @@ struct ContentView: View {
     }
     */
     
+    init () {
+        SoundManager.instance.startBM ()
+        if UserDefaults.standard.value(forKey: "COINS_KEY") == nil {
+            coins = 50
+            UserDefaults.standard.set(50, forKey: "COINS_KEY") 
+        } else {
+            coins = UserDefaults.standard.integer(forKey: "COINS_KEY")
+        }
+        
+        if let data = UserDefaults.standard.data(forKey: "Pets_Key") {
+            if let decoded = try? JSONDecoder().decode([Pets].self, from: data) {
+                pets = decoded
+                return
+            }
+        }
+        pets = [Pets(animal: "cat"), Pets(animal: "dog"), Pets(animal: "bird"), Pets(animal: "bunny"), Pets(animal: "fish")]
+    }
+    
+    func saveData () {
+        if let encoded = try? JSONEncoder().encode(pets) {
+            UserDefaults.standard.set(encoded, forKey: "Pets_Key")
+        }
+        UserDefaults.standard.set(coins, forKey: "COINS_KEY")
+    }
+    
     func checkMinBal (min: Int) -> Bool {
         if(min <= coins) {
             return true
@@ -59,8 +83,8 @@ struct ContentView: View {
     
     func shopButtAni (animal: Pets) {
         if (!animal.owned){
-           if (checkMinBal(min: 100)) {
-               coins -= 100
+           if (checkMinBal(min: animal.price)) {
+               coins -= animal.price
                curanimal = animal
                notifTxt = "You now have a \(animal.animal)!"
                SoundManager.instance.sound (soundType: animal.sounds[Int.random(in: 0...3)])
@@ -74,6 +98,7 @@ struct ContentView: View {
             curanimal = animal
         }
         notifView = true
+        saveData()
     }
     
     
@@ -116,7 +141,7 @@ struct ContentView: View {
                     Header()
                         .scaledToFit()
                         .ignoresSafeArea()
-                        .position(x: geo.size.width/2, y: geo.size.height * -0.13)
+                        .position(x: geo.size.width/2, y: geo.size.height * -0.1)
                     
                     VStack (spacing: 10) {
                         
@@ -126,6 +151,8 @@ struct ContentView: View {
                         
                         Button (action: {
                             coins += 1
+                            print ("Saving Data...")
+                            saveData()
                         }) {
                             if (curanimal.animal == "cat" && (coins % 5) != 0) {
                                 Image("Cat1")
@@ -151,10 +178,17 @@ struct ContentView: View {
                             } else if (curanimal.animal == "bunny" && (coins % 5) == 0) {
                                 Image("Bunny2")
                                     .resizable()
+                            } else if (curanimal.animal == "fish" && (coins % 5) != 0) {
+                                Image("Fish1")
+                                    .resizable()
+                            } else if (curanimal.animal == "fish" && (coins % 5) == 0) {
+                                Image("Fish2")
+                                    .resizable()
                             }
                         }
-                        .padding()
                         .scaledToFit()
+                        .frame(width: geo.size.width * 0.9, height: geo.size.height * 0.7)
+                        .position(x: geo.size.width/2, y: geo.size.height * 0.41)
                         
                         ZStack {
                             Image ("bluetexture")
@@ -165,27 +199,54 @@ struct ContentView: View {
                             .background(Color.theme.accent1)
                             .cornerRadius(20)
                             .shadow(color: .black.opacity(0.2), radius: 5, x: -3, y: 3)
+                            .position(x: geo.size.width/2, y: geo.size.height * 0.47)
                             
-                        
-                        Button (action: {
-                            shopView = true
-                        }) {
-                            ZStack {
-                                Image("pinkstone")
-                                    .resizable()
-                                    .frame(width: 320, height: 220)
-                                    .opacity(0.5)
-                                Text ("Shop")
-                                    .fontWeight(.bold)
+                        HStack (spacing: 10) {
+                            Button (action: {
+                                shopView = true
+                            }) {
+                                ZStack {
+                                    Image("pinkstone")
+                                        .resizable()
+                                        .frame(width: 320, height: 220)
+                                        .opacity(0.5)
+                                    Text ("Shop")
+                                        .fontWeight(.bold)
+                                }
                             }
+                            .frame(width: 120, height: 20)
+                            .padding(12)
+                            .foregroundColor(.black)
+                            .background(Color.theme.accent2)
+                            .cornerRadius(20)
+                            .shadow(color: .black.opacity(0.2), radius: 5, x: -5, y: 5)
+                            .position(x: geo.size.width * 0.45, y: geo.size.height * 0.23)
+                            
+                            Button (action: {
+                                if (mute) {
+                                    mute = false
+                                    SoundManager.instance.resumeBM ()
+                                } else {
+                                    mute = true
+                                    SoundManager.instance.stopSound()
+                                }
+                            }) {
+                                if (mute) {
+                                    Image ("mute")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .scaledToFit()
+                                        .position(x: geo.size.width * 0.2, y: geo.size.height * 0.23)
+                                } else {
+                                    Image ("volume")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .scaledToFit()
+                                        .position(x: geo.size.width * 0.2, y: geo.size.height * 0.23)
+                                }
+                            }
+                            
                         }
-                        .frame(width: 120, height: 20)
-                        .padding(12)
-                        .foregroundColor(.black)
-                        .background(Color.theme.accent2)
-                        .cornerRadius(20)
-                        .shadow(color: .black.opacity(0.2), radius: 5, x: -5, y: 5)
-                        
                         Spacer()
                     }
                     
@@ -273,14 +334,14 @@ struct ContentView: View {
                                         .font(.title2.weight(.medium))
                                     Spacer()
                                     Button (action: {
-                                        shopButtAni (animal: cat)
+                                        shopButtAni (animal: pets [0])
                                     }) {
                                         ZStack{
                                             Image ("bluetexture")
                                                 .resizable()
                                                 .opacity(0.5)
-                                            if (!cat.owned) {
-                                                Text ("100")
+                                            if (!pets [0].owned) {
+                                                Text ("1000")
                                             } else {
                                                 Text ("Switch")
                                             }
@@ -298,39 +359,14 @@ struct ContentView: View {
                                         .font(.title2.weight(.medium))
                                     Spacer()
                                     Button (action: {
-                                        shopButtAni (animal: dog)
+                                        shopButtAni (animal: pets [1])
                                     }) {
                                         ZStack{
                                             Image ("bluetexture")
                                                 .resizable()
                                                 .opacity(0.5)
-                                            if (!dog.owned) {
-                                                Text ("100")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
-                                }
-                                
-                                HStack {
-                                    Text ("Bird")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: bird)
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!bird.owned) {
-                                                Text ("100")
+                                            if (!pets [1].owned) {
+                                                Text ("1000")
                                             } else {
                                                 Text ("Switch")
                                             }
@@ -348,14 +384,40 @@ struct ContentView: View {
                                         .font(.title2.weight(.medium))
                                     Spacer()
                                     Button (action: {
-                                        shopButtAni (animal: bunny)
+                                        shopButtAni (animal: pets [3])
                                     }) {
                                         ZStack{
                                             Image ("bluetexture")
                                                 .resizable()
                                                 .opacity(0.5)
-                                            if (!bunny.owned) {
-                                                Text ("100")
+                                            if (!pets [3].owned) {
+                                                Text ("500")
+                                            } else {
+                                                Text ("Switch")
+                                            }
+                                        }
+                                    }
+                                    .frame(width: 100, height: 50)
+                                    .foregroundColor(.black)
+                                    .background(Color.theme.butt1)
+                                    .cornerRadius(15)
+                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
+                                    
+                                }
+                                
+                                HStack {
+                                    Text ("Bird")
+                                        .font(.title2.weight(.medium))
+                                    Spacer()
+                                    Button (action: {
+                                        shopButtAni (animal: pets [2])
+                                    }) {
+                                        ZStack{
+                                            Image ("bluetexture")
+                                                .resizable()
+                                                .opacity(0.5)
+                                            if (!pets [2].owned) {
+                                                Text ("200")
                                             } else {
                                                 Text ("Switch")
                                             }
@@ -367,6 +429,33 @@ struct ContentView: View {
                                     .cornerRadius(15)
                                     .shadow(color: .pink, radius: 3, x: -1, y: 1)
                                 }
+                                
+                                HStack {
+                                    Text ("Fish")
+                                        .font(.title2.weight(.medium))
+                                    Spacer()
+                                    Button (action: {
+                                        shopButtAni (animal: pets [4])
+                                    }) {
+                                        ZStack{
+                                            Image ("bluetexture")
+                                                .resizable()
+                                                .opacity(0.5)
+                                            if (!pets [4].owned) {
+                                                Text ("50")
+                                            } else {
+                                                Text ("Switch")
+                                            }
+                                        }
+                                    }
+                                    .frame(width: 100, height: 50)
+                                    .foregroundColor(.black)
+                                    .background(Color.theme.butt1)
+                                    .cornerRadius(15)
+                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
+                                    
+                                }
+                                
                             } else if (sAccentView) {
                                 Text ("WIP")
                             } else if (sBackgroundView) {
@@ -532,6 +621,7 @@ struct ContentView: View {
                         Text (notifTxt)
                             .font(.title2.weight(.medium))
                             .padding()
+                            .frame(width: geo.size.width * 0.6)
                         
                         Button (action: {
                             notifView = false
