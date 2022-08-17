@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @State private var coins: Int
     @State private var mute = false
+    @State private var tutorial: Int
+    
     
     @State private var shopView = false
     @State private var sPetView = true
@@ -30,6 +32,7 @@ struct ContentView: View {
     @State private var indoor2 =  Back(back: "Room2")
     @State private var curBack = ""
     
+
     
     /* Cannot be in seperate folder while on device
     class SoundManager {
@@ -56,6 +59,15 @@ struct ContentView: View {
             UserDefaults.standard.set(50, forKey: "COINS_KEY") 
         } else {
             coins = UserDefaults.standard.integer(forKey: "COINS_KEY")
+        }
+
+        if UserDefaults.standard.value(forKey: "TUTORIAL") == nil {
+            tutorial = 0
+            UserDefaults.standard.set(0, forKey: "TUTORIAL")
+            notifTxt = "Welcome to PetTap! To get started, we need a pet! Click on shop"
+            notifView = true
+        } else {
+            tutorial = UserDefaults.standard.integer(forKey: "TUTORIAL")
         }
         
         if let data = UserDefaults.standard.data(forKey: "Pets_Key") {
@@ -124,6 +136,7 @@ struct ContentView: View {
             Color.theme.accent1
                 .ignoresSafeArea()
             
+            
             GeometryReader { geo in
                 Image("bluetexture")
                     .resizable()
@@ -137,7 +150,7 @@ struct ContentView: View {
                     
                     
                 
-                if !shopView {
+                if (!shopView) {
                     Header()
                         .scaledToFit()
                         .ignoresSafeArea()
@@ -151,8 +164,11 @@ struct ContentView: View {
                         
                         Button (action: {
                             coins += 1
-                            print ("Saving Data...")
                             saveData()
+                            if (tutorial == 4) {
+                                notifTxt = "Congratualtions! You have completed the tutorial! Have fun!"
+                                notifView = true
+                            }
                         }) {
                             if (curanimal.animal == "cat" && (coins % 5) != 0) {
                                 Image("Cat1")
@@ -204,6 +220,10 @@ struct ContentView: View {
                         HStack (spacing: 10) {
                             Button (action: {
                                 shopView = true
+                                if (tutorial == 1) {
+                                    notifTxt = "This is the store where you can buy pets. Let's start with the fish."
+                                    notifView = true
+                                }
                             }) {
                                 ZStack {
                                     Image("pinkstone")
@@ -436,6 +456,10 @@ struct ContentView: View {
                                     Spacer()
                                     Button (action: {
                                         shopButtAni (animal: pets [4])
+                                        if (tutorial == 2) {
+                                            notifTxt = "Great! You can also toggle tabs above to buy new backgrounds. Let's go back to see our fish."
+                                            notifView = true
+                                        }
                                     }) {
                                         ZStack{
                                             Image ("bluetexture")
@@ -592,6 +616,10 @@ struct ContentView: View {
                             
                             Button (action: {
                                 shopView = false
+                                if (tutorial == 3) {
+                                    notifTxt = "Tap on the fish to collect coins."
+                                    notifView = true
+                                }
                             }) {
                                 ZStack{
                                     Image ("bluetexture")
@@ -621,10 +649,13 @@ struct ContentView: View {
                         Text (notifTxt)
                             .font(.title2.weight(.medium))
                             .padding()
-                            .frame(width: geo.size.width * 0.6)
+                            .fixedSize(horizontal: false, vertical: true)
                         
                         Button (action: {
                             notifView = false
+                            if (tutorial < 5) {
+                                tutorial += 1
+                            }
                         }) {
                             Text ("Okay")
                         }
@@ -634,7 +665,7 @@ struct ContentView: View {
                         .cornerRadius(15)
                         .padding()
                     }
-                    .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.25)
+                    .frame(width: geo.size.width * 0.7, height: geo.size.height * 0.3)
                     .background(Color.theme.butt2)
                     .cornerRadius(30)
                     .position(x: geo.size.width/2, y: geo.size.height/2)
