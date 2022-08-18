@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var notifView = false
     @State private var notifTxt = ""
     
-    @State private var curanimal = Pets(animal: "")
+    @State private var curanimal = Pets(animal: .none)
     @State private var pets: [Pets]
     
     @State private var dayBack =  Back(back: "Day")
@@ -76,7 +76,8 @@ struct ContentView: View {
                 return
             }
         }
-        pets = [Pets(animal: "cat"), Pets(animal: "dog"), Pets(animal: "bird"), Pets(animal: "bunny"), Pets(animal: "fish")]
+
+        pets = PetType.displaybleTypes.map({ Pets(animal: $0) })
     }
     
     func saveData () {
@@ -95,18 +96,18 @@ struct ContentView: View {
     
     func shopButtAni (animal: Pets) {
         if (!animal.owned){
-           if (checkMinBal(min: animal.price)) {
-               coins -= animal.price
+            if (checkMinBal(min: animal.animalType.price)) {
+                coins -= animal.animalType.price
                curanimal = animal
-               notifTxt = "You now have a \(animal.animal)!"
-               SoundManager.instance.sound (soundType: animal.sounds[Int.random(in: 0...3)])
+                notifTxt = "You now have a \(animal.animalType.name)!"
+                SoundManager.instance.sound (soundType: animal.animalType.sounds[Int.random(in: 0...3)])
                animal.owned = true
             } else {
                 notifTxt = "You do not have enough coins"
             }
         } else {
-            SoundManager.instance.sound (soundType: animal.sounds[Int.random(in: 0...3)])
-            notifTxt = "You switched to \(animal.animal)!"
+            SoundManager.instance.sound (soundType: animal.animalType.sounds[Int.random(in: 0...3)])
+            notifTxt = "You switched to \(animal.animalType.name)!"
             curanimal = animal
         }
         notifView = true
@@ -170,35 +171,12 @@ struct ContentView: View {
                                 notifView = true
                             }
                         }) {
-                            if (curanimal.animal == "cat" && (coins % 5) != 0) {
-                                Image("Cat1")
+                            // Show exited image after every 5 coins
+                            if (coins % 5 == 0) {
+                                Image(curanimal.animalType.imageNameExcited)
                                     .resizable()
-                            } else if (curanimal.animal == "cat" && (coins % 5) == 0) {
-                                    Image("Cat2")
-                                        .resizable()
-                            } else if (curanimal.animal == "dog" && (coins % 5) != 0) {
-                                Image("Dog1")
-                                    .resizable()
-                            } else if (curanimal.animal == "dog" && (coins % 5) == 0) {
-                                Image("Dog2")
-                                    .resizable()
-                            } else if (curanimal.animal == "bird" && (coins % 5) != 0) {
-                                Image("Bird1")
-                                    .resizable()
-                            } else if (curanimal.animal == "bird" && (coins % 5) == 0) {
-                                Image("Bird2")
-                                    .resizable()
-                            } else if (curanimal.animal == "bunny" && (coins % 5) != 0) {
-                                Image("Bunny1")
-                                    .resizable()
-                            } else if (curanimal.animal == "bunny" && (coins % 5) == 0) {
-                                Image("Bunny2")
-                                    .resizable()
-                            } else if (curanimal.animal == "fish" && (coins % 5) != 0) {
-                                Image("Fish1")
-                                    .resizable()
-                            } else if (curanimal.animal == "fish" && (coins % 5) == 0) {
-                                Image("Fish2")
+                            } else {
+                                Image(curanimal.animalType.imageNameNormal)
                                     .resizable()
                             }
                         }
@@ -349,137 +327,41 @@ struct ContentView: View {
                             Spacer()
                             
                             if (sPetView){
-                                HStack {
-                                    Text ("Cat")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: pets [0])
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!pets [0].owned) {
-                                                Text ("1000")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
-                                }
                                 
-                                HStack {
-                                    Text ("Dog")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: pets [1])
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!pets [1].owned) {
-                                                Text ("1000")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
-                                }
-                                
-                                HStack {
-                                    Text ("Bunny")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: pets [3])
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!pets [3].owned) {
-                                                Text ("500")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
+                                List(pets, id: \.animalType) { pet in
                                     
-                                }
-                                
-                                HStack {
-                                    Text ("Bird")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: pets [2])
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!pets [2].owned) {
-                                                Text ("200")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
-                                }
-                                
-                                HStack {
-                                    Text ("Fish")
-                                        .font(.title2.weight(.medium))
-                                    Spacer()
-                                    Button (action: {
-                                        shopButtAni (animal: pets [4])
-                                        if (tutorial == 2) {
-                                            notifTxt = "Great! You can also toggle tabs above to buy new backgrounds. Let's go back to see our fish."
-                                            notifView = true
-                                        }
-                                    }) {
-                                        ZStack{
-                                            Image ("bluetexture")
-                                                .resizable()
-                                                .opacity(0.5)
-                                            if (!pets [4].owned) {
-                                                Text ("50")
-                                            } else {
-                                                Text ("Switch")
-                                            }
-                                        }
-                                    }
-                                    .frame(width: 100, height: 50)
-                                    .foregroundColor(.black)
-                                    .background(Color.theme.butt1)
-                                    .cornerRadius(15)
-                                    .shadow(color: .pink, radius: 3, x: -1, y: 1)
+                                    let animalInDisplay = pet
                                     
+                                    HStack {
+                                        Text (animalInDisplay.animalType.name)
+                                            .font(.title2.weight(.medium))
+                                        Spacer()
+                                        Button (action: {
+                                            shopButtAni (animal: animalInDisplay)
+                                        }) {
+                                            ZStack{
+                                                Image ("bluetexture")
+                                                    .resizable()
+                                                    .opacity(0.5)
+                                                if (!animalInDisplay.owned) {
+                                                    Text ("\(animalInDisplay.animalType.price)")
+                                                } else {
+                                                    Text ("Switch")
+                                                }
+                                            }
+                                        }
+                                        .frame(width: 100, height: 50)
+                                        .foregroundColor(.black)
+                                        .background(Color.theme.butt1)
+                                        .cornerRadius(15)
+                                        .shadow(color: .pink, radius: 3, x: -1, y: 1)
+                                    }
+                                    .listRowSeparator(.hidden)
+                                    .listRowBackground(Color.clear)
                                 }
                                 
+                                
+
                             } else if (sAccentView) {
                                 Text ("WIP")
                             } else if (sBackgroundView) {
